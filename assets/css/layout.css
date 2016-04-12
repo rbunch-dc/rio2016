@@ -1,6 +1,9 @@
   .form-control.search{
     width: 100px;
   }
+   .searchBox2{
+    margin-bottom:3%;
+  }
   .welcome-header{
     text-align: center;
     font-size: 54px;
@@ -129,4 +132,8 @@ body{
   text-align: center;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
   width: 400px;
+}
+
+.1 {
+  padding: 1%;
 }
