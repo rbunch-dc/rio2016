@@ -1,0 +1,32 @@
+  .form-control.search{
+    width: 100px;
+  }
+  .welcome-header{
+    text-align: center;
+    font-size: 54px;
+  }
+  .olympicSymbol{
+    text-align: center;
+  }
+  .olympicsPanel{
+    width: 100%;
+    padding-left: 1%;
+  }
+  .sidebar-nav.color{
+    background-color: #ffffff;
+  }
+  .collapsed.one{
+    background-color: #ffffff;
+  }
+  .collapseMe{
+    background-color: white;
+    border: none;
+    display: none;
+  }
+ .unnecessaryBorder{
+  border: none;
+ }
+ #clock{
+  color: black;
+  border: 1px dotted red;
+ }
