@@ -32,22 +32,33 @@
     '$http',
     function($scope, $http) {
 
-      $scope.search = function(searchTerm) {
+      $scope.search = function(olympicURL) {
         console.log('Searching Wikipedia for ', searchTerm);
-
-        var olympicURL = 'https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=' + searchTerm +
-          '&format=json&callback=JSON_CALLBACK'
-          //'https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&prop=text&rvprop=content&format=json';
-
-        // SEARCHING
-        // 'https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=' + searchTerm +
-        //  '&format=json&callback=JSON_CALLBACK'
-
+        // searchURL
+        // var olympicURL = 'https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=' + searchTerm +'&format=json&callback=JSON_CALLBACK'
+        var olympicURL = "https://en.wikipedia.org/w/api.php?action=parse&format=json&pageid=961522&prop=sections%7Clinks&section=17&utf8=1&format=json&callback=JSON_CALLBACK";
+      
         $http.jsonp(olympicURL).then(function successCallback(response) {
           // this callback will be called asynchronously
           // when the response is available
           console.log('Success');
+          // console.log(response.data.parse.links);
+          $scope.data = response.data.parse.links;
+          ast = '*';
+          countryNameArray =[];
+          for (i=0; i<$scope.data.length; i++){
+            var country = $scope.data[i][ast];
+            // console.log(country);
+            var cut = country.indexOf("at the 2016");
+            // console.log(cut);
+            if(cut != -1){
+              countryNameArray.push(country.slice(0,cut-1));
+            }else{
+              countryNameArray.push(country);
+            }
 
+          }
+          console.log(countryNameArray);
           $scope.data = response;
         }, function errorCallback(response) {
           // called asynchronously if an error occurs
