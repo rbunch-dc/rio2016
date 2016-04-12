@@ -1,0 +1,117 @@
+* {margin:0;
+		padding:0;}
+
+#nav-box {border: 1px solid black;
+		  height: 400px;
+		  margin:0;
+			padding:0;}
+
+#searchtxt {width:66%;
+			margin:0;
+			padding:0;
+			border: 1px solid black;
+}
+#searchbtn {width:32%;
+			margin:0;
+			padding:0;
+			border:1px solid black;}
+
+.header-wrapper {border: 1px solid black;
+				 height: 400px;
+				 background: linear-gradient(to right, white, green);}
+
+#title {font-family: arial;
+		color: white;
+		font-size:5em;}
+
+#logo {border: 1px solid black;
+		height: 150px;}
+
+.timer { border: 1px solid black;
+		height:100px;
+
+		margin-top: 30px;}
+
+a {background-color: rgba(1,1,1,0.2);
+
+
+	}
+
+#rowTwo {border: 1px solid black;
+			height: 550px;
+			}
+
+
+#shadeLeft  {padding:0;
+			margin:0;
+			line-height: 550px;
+			text-align:center;}
+
+#shadeRight  {padding:0;
+			margin:0;
+			line-height: 550px;
+			text-align:center;}
+#shadeLeft a:hover { background: linear-gradient(to right, black, white);
+					display:inline-block;
+					height:550px;
+					width:100%;
+					}
+
+#shadeRight a:hover { background: linear-gradient(to right, white, black);
+					display:inline-block;
+					height:550px;
+					width:100%;
+					line-height: 550px;}
+
+#titleTwo {font-size:2.8em;
+			text-align:center;
+		  text-decoration: underline;}
+
+#image1 {background-image: url(../img/flower.jpg);
+		background-position: center;
+		height:150px;}
+
+
+#image2 {background-image: url(../img/flower.jpg);
+		background-position: center;
+		height:150px;}
+
+
+#image3 {background-image: url(../img/flower.jpg);
+		background-position: center;
+		height:150px;}
+
+
+#image4 {background-image: url(../img/flower.jpg);
+		background-position: center;
+		height:150px;}
+
+
+#image5 {background-image: url(../img/flower.jpg);
+		background-position: center;
+		height:150px;}
+
+
+
+#image6 {background-image: url(../img/flower.jpg);
+		background-position: center;
+		height:150px;}
+
+
+
+#image7 {background-image: url(../img/flower.jpg);
+		background-position: center;
+		height:150px;}
+
+
+
+#image8 {background-image: url(../img/flower.jpg);
+		background-position: center;
+		height:150px;}
+
+
+#map {background-image: url(../img/worldMap.jpg);
+		background-size: cover;
+		background-position: center;
+
+	height:650px;}
