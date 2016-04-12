@@ -37,7 +37,7 @@ a {background-color: rgba(1,1,1,0.2);
 
 	}
 
-#rowTwo {border: 1px solid black;
+#rowTwo {border-top: 1px solid black;
 			height: 550px;
 			}
 
