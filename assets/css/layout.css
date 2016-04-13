@@ -1,6 +1,9 @@
   .form-control.search{
     width: 100px;
   }
+  .mainSearch {max-width:34px;
+               clear:both;}
+
    .searchBox2{
     margin-bottom:3%;
   }
@@ -14,7 +17,7 @@
   .olympicsPanel{
     width: 100%;
     padding-left: 1%;
-  }
+      }
   .sidebar-nav.color{
     background-color: #ffffff;
   }
@@ -26,6 +29,9 @@
     border: none;
     display: none;
   }
+
+  li a {clear:left;}
+
  .unnecessaryBorder{
   border: none;
  }
@@ -134,6 +140,5 @@ body{
   width: 400px;
 }
 
-.1 {
-  padding: 1%;
-}
+#countdown {text-align:center;}
+.affix-sidebar {max-width:259px;}

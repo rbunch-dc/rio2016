@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js"></script>
+    <script src="events.js"></script>
+  </head>
+  <body>
+    <div class="container" ng-app="eventApp" ng-controller="eventController as myCtrl">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="well well-md">
+                    <label for="searchTerm">Search Wikipedia</label>
+                    <div class="input-group" id="searchBar">
+                        <input type="text" data-ng-model="searchTerm" class="form-control" id="searchTerm"></input> <span class="input-group-btn">
+                <button class="btn btn-info" data-ng-click="search(searchTerm)">Search</button>
+              </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">{{data}}
+            <div class="debug"></div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-repeat="result in results">
+                <p>{{2+2}}</p>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

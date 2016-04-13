@@ -32,7 +32,7 @@
 
 		margin-top: 30px;}
 
-a {background-color: rgba(1,1,1,0.2);
+
 
 
 	}
@@ -115,3 +115,84 @@ a {background-color: rgba(1,1,1,0.2);
 		background-position: center;
 
 	height:650px;}
+
+.alphabet a {
+			font-family: 'Playfair Display', serif;
+			text-transform: uppercase;
+			font-size:20px;}
+
+
+
+
+
+/* Row Four beginning*/
+
+#athleteImage1 {background-image: url(../img/athlete1.jpg);
+				background-size: cover;
+				background-position: center;
+				border-radius: 50%;
+				height:220px;}
+
+
+#athleteImage2 {background-image: url(../img/athlete2.jpg);
+				background-size: cover;
+				background-position: center;
+				border-radius: 50%;
+				height:220px;}
+
+
+#athleteImage3 {background-image: url(../img/athlete3.jpg);
+				background-size: cover;
+				background-position: center;
+				border-radius: 50%;
+				height:220px;}
+
+
+#athleteImage4 {background-image: url(../img/athlete1.jpg);
+				background-size: cover;
+				background-position: center;
+				border-radius: 50%;
+				height:220px;}
+
+
+#athleteImage5 {background-image: url(../img/athlete2.jpg);
+				background-size: cover;
+				background-position: center;
+				border-radius: 50%;
+				height:220px;}
+
+
+#athleteImage6 {background-image: url(../img/athlete3.jpg);
+				background-size: cover;
+				background-position: center;
+				border-radius: 50%;
+				height:220px;}
+
+
+#athleteImage7 {background-image: url(../img/athlete1.jpg);
+				background-size: cover;
+				background-position: center;
+				border-radius: 50%;
+				height:220px;}
+
+
+#athleteImage8 {background-image: url(../img/athlete2.jpg);
+				background-size: cover;
+				background-position: center;
+				border-radius: 50%;
+				height:220px;}
+
+
+#athleteImage9 {background-image: url(../img/athlete3.jpg);
+				background-size: cover;
+				background-position: center;
+				border-radius: 50%;
+				height:220px;}
+
+
+#athleteImage10 {background-image: url(../img/athlete1.jpg);
+				background-size: cover;
+				background-position: center;
+				border-radius: 50%;
+				height:220px;}
+
