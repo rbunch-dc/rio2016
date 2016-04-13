@@ -1,11 +1,11 @@
 var rioApp = angular.module("rioApp", []);
 
-rioApp.factory('rioDataService', function($http) {
+rioApp.factory('DataService', function($http) {
 
 
   var _data = {};
   var _baseUrl = 'https://en.wikipedia.org//w/api.php?';
-  var _extendUrl = 'action=parse&format=json&pageid=961522&prop=sections%7Clinks&section=15&utf8=1';
+  var _extendUrl = 'action=parse&format=json&text=&pageid=961522&prop=links&section=17';
   var _finalUrl = '';
   var _endUrl = '&format=json&callback=JSON_CALLBACK';
 
@@ -25,47 +25,71 @@ rioApp.factory('rioDataService', function($http) {
     return _extendUrl;
   }
 
-  var getCountries = function() {
-    _data = $http.jsonp(_baseUrl + _extendUrl + _endUrl).then(function successCallback(res) {
-      console.log('Success');
-      console.log(response.data.parse.links);
-      $scope.data = response.data.parse.links;
-      ast = '*';
-      eventArray = [];
-      for (i = 0; i < $scope.data.length; i++) {
-        var event = $scope.data[i][ast];
-        console.log(event);
-        var cut = event.indexOf("at");
-        console.log(cut);
-        if (cut != -1) {
-          eventArray.push(event.slice(0, cut - 1));
-        } else {
-          eventArray.push(event);
+  var getCountries = function(_callBack) {
+    //console.log("joes test");
+    $http.jsonp(_baseUrl + _extendUrl + _endUrl).then(function successCallback(res) {
+        console.log('Success');
+        //console.log(res.data.parse.links);
+        //$scope.data = res.data.parse.links;
+        var _dat = res.data.parse.links;
+        var ast = '*';
+        var _itemsNeeded = [];
+        var _itemCounted = [];
+
+        for (i = 0; i < _dat.length; i++) {
+          var event = _dat[i][ast];
+          var _item = event.match(/at\sthe\s2016\sSummer\sOlympics/g);
+
+          if (_item != null) {
+            var cut = event.indexOf("2016");
+            //console.log(event.indexOf("2016"));
+
+            _itemsNeeded.push(event.slice(0, cut - 8));
+          }
+
+          //console.log(event);
+          // var cut = event.indexOf("at");
+          // console.log(cut);
+          // if (cut != -1) {
+          //   eventArray.push(event.slice(0, cut - 1));
+          // } else {
+          //   eventArray.push(event);
+          // }
+
+
+
+          //console.log(event.match(/at\sthe\s2016\sSummer\sOlympics/g));
+          //console.log(event);
+
         }
-      }
+        //console.log(_itemsNeeded);
+        _callBack(_itemsNeeded);
 
-      $scope.data = res;
-    }, function errorCallback(res) {
-      console.log('Failure');
-
-      $scope.data = res;
-      console.log('Failure');
-
-      $scope.data = res;
-      console.log('Failure');
-
-      $scope.data = res;
-    });
+      },
+      function errorCallback(res) {
+        console.log('Failure');
+        _callBack(res);
+      });
   }
-  return _data;
+
+  return {
+    getCountries: getCountries
+  }
 });
 
 
-rioApp.controller('rioMainModule', function($scope, rioDataService) {
+rioApp.controller('MainModule', function($scope, DataService) {
 
-
+  DataService.getCountries(function(poneys) {
+    $scope.poneys = poneys;
+    console.log(poneys);
+  });
 
 });
+
+// rioApp.run(function($rootScope, $location, $routeParams, $controller, DataService) {
+//   console.log("Hello Controller");
+// });
 
 // return {
 //   store: function(key, value) {
@@ -79,7 +103,7 @@ rioApp.controller('rioMainModule', function($scope, rioDataService) {
 //     return data;
 //   }
 
-// rioApp.factory('rioDataService', function($http, $q, $rootScope) {
+// rioApp.factory('DataService', function($http, $q, $rootScope) {
 //
 //   var data = {};
 //
