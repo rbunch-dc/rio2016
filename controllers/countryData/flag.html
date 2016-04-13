@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js"></script>
+    <script src="flag.js"></script>
+    <script src="countryFlag.js"></script>
+     <script src="countryMedal.js"></script>
+  </head>
+  <body ng-app="flagApp" ng-controller="flagController as myCtrl">
+    <div class="container" >
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="well well-md">
+                    <label for="searchTerm">Search Wikipedia</label>
+                    <div class="input-group" id="searchBar">
+                        <input type="text" data-ng-model="searchTerm" class="form-control" id="searchTerm"></input> <span class="input-group-btn">
+                <button class="btn btn-info" data-ng-click="search(searchTerm)">Search</button>
+              </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="debug"></div>
+             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-repeat="country in countryFlag">
+           
+            <img src="{{country.link}}"> {{country.name}} 
+        </div>
+        </div>
+    </div>
+  </body>
+</html>

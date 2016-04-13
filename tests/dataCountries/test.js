@@ -51,7 +51,7 @@
             // console.log(country);
             var cut = country.indexOf("at the 2016");
             // console.log(cut);
-            if(cut != -1){
+            if(cut != 1){
               countryNameArray.push(country.slice(0,cut-1));
             }else{
               countryNameArray.push(country);
@@ -73,8 +73,7 @@
 
           $scope.data = response;
         });
-      };
-
+       };
     }
   ]);
 })();
