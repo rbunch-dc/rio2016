@@ -29,18 +29,15 @@
 
 .timer { border: 1px solid black;
 		height:100px;
-
 		margin-top: 30px;}
-
-
-
-
 	}
-
+.articleBig{
+	border-right: 10px solid black;
+}
 #rowTwo {border-top: 1px solid black;
 			height: 550px;
+			
 			}
-
 
 #shadeLeft  {padding:0;
 			margin:0;
@@ -131,7 +128,8 @@
 				background-size: cover;
 				background-position: center;
 				border-radius: 50%;
-				height:220px;}
+				height:220px;
+				}
 
 
 #athleteImage2 {background-image: url(../img/athlete2.jpg);
@@ -195,4 +193,55 @@
 				background-position: center;
 				border-radius: 50%;
 				height:220px;}
-
+.two{
+	background: url('../img/flag2.jpg') no-repeat;
+	background-position: center;
+	background-size: cover;
+	margin-right: .01%;
+	margin-left: .01%;	
+}
+.fourFour{
+	background: url('../img/medals.jpeg') no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+/*.four{
+	background-color: rgba(237,228,240,0.5);
+}
+.five{
+	background-color: rgba(237,228,240,0.5);*/
+}
+#myCarousel {
+    background-image: none !important;
+}
+.carousel-control.right, .carousel-control.left  {
+    background-image: none ;
+}
+span.icon-next.right1{
+	position: absolute;
+	right: -10%;
+}
+span.icon-prev.left1{
+	position: absolute;
+	left: -10%;
+}
+.topAthlete{
+	background-color: rgba(3,3,3, 0.2);
+	margin-right: 1%;
+}
+.secondHead{
+	min-height: 600px;
+}
+.text-center{
+	font-size: 50px;
+}
+/*#miniTitle1{
+	background-color: rgba(237,228,240,0.5);
+}*/
+.rgba{
+	background-color: rgba(237,228,240,0.5);
+}
+.fixedNavBar{
+	position: fixed;
+	
+}

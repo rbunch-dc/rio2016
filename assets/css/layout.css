@@ -1,5 +1,12 @@
   .form-control.search{
     width: 100px;
+    position: fixed;
+    top: 30px;
+    left: 63px;
+  }
+  #sidenav01{
+    position: fixed;
+    top: 60px;
   }
   .mainSearch {max-width:34px;
                clear:both;}
@@ -10,6 +17,10 @@
   .welcome-header{
     text-align: center;
     font-size: 54px;
+    /*background: linear-gradient(to right, white, gray);*/
+  }
+  .headerStyle{
+    color: white;
   }
   .olympicSymbol{
     text-align: center;
@@ -17,15 +28,24 @@
   .olympicsPanel{
     width: 100%;
     padding-left: 1%;
+    color: white;
+   /* position: fixed;*/
       }
+  .btn.btn-default.buttOn{
+    position: fixed;
+    top: 30px;
+  }
   .sidebar-nav.color{
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
+    background: transparent;
   }
   .collapsed.one{
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
+    background: transparent;
   }
   .collapseMe{
-    background-color: white;
+ /*   background-color: white;*/
+    background: transparent;
     border: none;
     display: none;
   }
@@ -34,6 +54,7 @@
 
  .unnecessaryBorder{
   border: none;
+  background: transparent;
  }
  #clock{
   color: black;
@@ -140,5 +161,41 @@ body{
   width: 400px;
 }
 
-#countdown {text-align:center;}
-.affix-sidebar {max-width:259px;}
+#countdown {
+  text-align:center;
+}
+
+.affix-sidebar {
+  max-width:259px;
+  background: transparent;
+}
+.redeemer{
+   background: url('../img/redeemer.jpg') no-repeat;
+   background-size: cover;
+   background-position: center 50%;
+   width: 100%;
+}
+.color{
+background: transparent;
+}
+.glyphicon{
+  color: white;
+}
+.navIcons{
+  color: white;
+}
+.bigHead{
+  min-height: 600px;
+
+}
+#page-content-wrapper {
+    width: 100%;
+    padding-top: 0px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -220px;
+}
+
+
