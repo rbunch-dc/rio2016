@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<label for="searchTextField">Please Insert an address:</label>
+<br>
+<input id="searchTextField" type="text" size="50">
+</body>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&dummy=.js"></script>
+<script type="text/javascript">	
+var input = document.getElementById('searchTextField');
+var options = {
+	types: ['geocode'],
+	 componentRestrictions: {country: "us"}
+}
+new google.maps.places.Autocomplete(input, options);
+</script>
+</html>
+

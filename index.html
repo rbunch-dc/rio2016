@@ -3,356 +3,365 @@
     <head>
         <title>Olympics Whatever</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"/>
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <link rel="stylesheet" type="text/css" href="assets/css/layout.css">
         <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
-
+        <link rel="stylesheet" type="text/css" href="libs/map/jqvmap.css">
     </head>
     <body ng-controller="MainModule">
         <div class="main-wrapper">
             <div class="container-fluid">
                 <div class="rowZero redeemer">
                     <div class="row affix-row bigHead"> <a name="home"></a>
-                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 affix-sidebar">
-                                <div class="sidebar-nav color">
-                                    <div class="navbar navbar-default unnecessaryBorder" role="navigation">
-                                        <div class="navbar-header">
-                                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
-                                                <span class="sr-only">Toggle navigation</span>
-                                                <span class="icon-bar"></span>
-                                                <span class="icon-bar"></span>
-                                                <span class="icon-bar"></span>
-                                            </button>
-                                            <span class="visible-xs navbar-brand">Olympic menu</span>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 affix-sidebar">
+                        <div class="sidebar-nav color">
+                            <div class="navbar navbar-default unnecessaryBorder" role="navigation">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    </button>
+                                    <span class="visible-xs navbar-brand">Olympic menu</span>
+                                </div>
+                                <div class="navbar-collapse collapse sidebar-navbar-collapse collapseMe collapse in">
+                                    <ul class="nav navbar-nav" id="sidenav01">
+                                        <li class="active">
+                                            <h4 class="olympicsPanel">Olympics Panel</h4>
+                                        </li>
+                                        <div class="row">
+                                            <div class="input-group mainSearch">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default buttOn" type="button">Go!</button>
+                                                </span>
+                                                <input type="text" class="form-control search" placeholder="Search for...">
+                                            </div>
                                         </div>
-                                        <div class="navbar-collapse collapse sidebar-navbar-collapse collapseMe collapse in">
-                                            <ul class="nav navbar-nav" id="sidenav01">
-                                                <li class="active">
-                                                    <h4 class="olympicsPanel">Olympics Panel</h4>
-                                                </li>
-                                                <div class="row">
-
-                                                    <div class="input-group mainSearch">
-                                                        <span class="input-group-btn">
-                                                            <button class="btn btn-default buttOn" type="button">Go!</button>
-                                                         </span>
-                                                        <input type="text" class="form-control search" placeholder="Search for...">
-                                                     </div>
-
-                                                </div>
-                                                <li>
-                                                    <a href="#home">
-                                                        <span class="glyphicon glyphicon-home"></span>
-                                                        <span class='navIcons'>Home</span></a>
-                                                </li><br>
-                                                <li>
-                                                    <a href="#map">
-                                                        <span class="glyphicon glyphicon-globe"></span>
-                                                        <span class='navIcons'>World Map</span></a>
+                                        <li>
+                                            <a href="#home">
+                                                <span class="glyphicon glyphicon-home"></span>
+                                                <span class='navIcons'>Home</span></a>
+                                            </li><br>
+                                            <li>
+                                                <a href="#map">
+                                                    <span class="glyphicon glyphicon-globe"></span>
+                                                    <span class='navIcons'>World Map</span></a>
                                                 </li><br>
                                                 <li>
                                                     <a href="#charts">
                                                         <span class="glyphicon glyphicon-stats"></span>
                                                         <span class='navIcons'>Performance Charts</span></a>
-                                                </li><br>
-                                                <li>
-                                                    <a href="#athletes">
-                                                        <span class="glyphicon glyphicon-user"></span>
-                                                        <span class='navIcons'>Athletes</span></a>
-                                                </li>
-                                            </ul>
+                                                    </li><br>
+                                                    <li>
+                                                        <a href="#athletes">
+                                                            <span class="glyphicon glyphicon-user"></span>
+                                                            <span class='navIcons'>Athletes</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 affix-content">
+                                        <div class="col-sm-10">
+                                            <h1 class="welcome-header"><span class='headerStyle'>Welcome to Rio 2016</span><br>
+                                            <img src="assets/img/olympic-symbol.png" class="olympicSymbol">
+                                            </h1>
+                                            <!-- <div id="clock" class="col-sm-10 counter"></div> -->
+                                            <div id="countdown"></div>
+                                            <p id="note"></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 affix-content">
-                            <div class="col-sm-10">
-                                <h1 class="welcome-header"><span class='headerStyle'>Welcome to Rio 2016</span><br>
-                                    <img src="assets/img/olympic-symbol.png" class="olympicSymbol">
-                                </h1>
-                                <!-- <div id="clock" class="col-sm-10 counter"></div> -->
-                                <div id="countdown"></div>
-                                <p id="note"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                    <div class="row two secondHead" id="rowTwo">
-                        <div class="row mini">
-                            <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
-                                <h2 class="text-center">Featured Articles/Athletes</h2><br>
-                            </div>
-                        </div>
-
-
-                        <div class="row mini five">
-                            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                                <div id="myCarousel" class="carousel slide">
-
-                                    <div class="carousel-inner 1" >
-                                        <div class="item active">
-                                            <div class="row mini four">
-                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 articleBig">
-                                                    <div id="image1"></div>
-                                                      <div class="rgba">
-                                                        <h3 id="miniTitle1">I'm title one</h3>
-                                                        <div id="article1">
-                                                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 article">
-                                                    <div id="image2"></div>
-                                                      <div class="rgba">
-                                                        <h3 id="miniTitle2">I'm title Two</h3>
-                                                        <div id="article2">
-                                                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 article">
-                                                    <div id="image3"></div>
-                                                       <div class="rgba">
-                                                        <h3 id="miniTitle3">I'm title Three</h3>
-                                                        <div id="article3">
-                                                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 article">
-                                                    <div id="image4"></div>
-                                                      <div class="rgba">
-                                                        <h3 id="miniTitle4">I'm title four</h3>
-                                                        <div id="article4">
-                                                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="item ">
-                                            <div class="row mini five">
-                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" id="article5">
-                                                    <div id="image1"></div>
-                                                      <div class="rgba">
-                                                        <h3 id="miniTitle5">I'm title one</h3>
-                                                        <div id="article5">
-                                                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" id="article6">
-                                                    <div id="image6"></div>
-                                                      <div class="rgba">
-                                                        <h3 id="miniTitle6">I'm title Two</h3>
-                                                        <div id="article6">
-                                                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" id="article7">
-                                                    <div id="image7"></div>
-                                                      <div class="rgba">
-                                                        <h3 id="miniTitle7">I'm title Three</h3>
-                                                        <div id="article7">
-                                                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" id="article8">
-                                                    <div id="image8"></div>
-                                                      <div class="rgba">
-                                                        <h3 id="miniTitle8">I'm title four</h3>
-                                                        <div id="article8">
-                                                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
+                            <div class="row two secondHead" id="rowTwo">
+                                <div class="row mini">
+                                    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
+                                        <h2 class="text-center">Featured Articles/Athletes</h2><br>
                                     </div>
-
-                                    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-                                        <span class="icon-prev left1"></span>
-                                    </a>
-
-                                    <a class="carousel-control right" href="#myCarousel" data-slide="next">
-                                        <span class="icon-next right1"></span>
-                                    </a>
-
-                                </div> <!-- end of carousel-->
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- row two ending-->
-
-                    <div class="row three">
-                        <div class="row mini six">
-                            <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
-                                <h2 class="text-center">Participating countries</h2>
-                            </div>
-                        </div>
-
-                        <div class="row mini seven">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center alphabet">
-                                <a href="">a</a>
-                                <a href="">b</a>
-                                <a href="">c</a>
-                                <a href="">d</a>
-                                <a href="">e</a>
-                                <a href="">f</a>
-                                <a href="">g</a>
-                                <a href="">h</a>
-                                <a href="">i</a>
-                                <a href="">j</a>
-                                <a href="">k</a>
-                                <a href="">l</a>
-                                <a href="">m</a>
-
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
-                                <div class="input-group searchBox2">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
-                                    </span>
-                                        <input type="text" class="form-control search2" placeholder="Search for...">
                                 </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center alphabet">
-                                <a href="">n</a>
-                                <a href="">o</a>
-                                <a href="">p</a>
-                                <a href="">q</a>
-                                <a href="">r</a>
-                                <a href="">s</a>
-                                <a href="">t</a>
-                                <a href="">u</a>
-                                <a href="">v</a>
-                                <a href="">w</a>
-                                <a href="">x</a>
-                                <a href="">y</a>
-                                <a href="">z</a>
-                            </div>
-                        </div>
-                        <div class="row mini eight">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="map" name='map'></div>
-                        </div>
-                    </div><!-- row three ending-->
-
-                    <div class="row fourFour">
-                        <a name='athletes'></a>
-                        <div class="row mini nine">
-                            <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
-                                <h2 class="text-center">Top Athletes from Chosen Country</h2>
-                            </div>
-                        </div>
-                        <br/>
-                        <div class="row mini ten">
-
-                            <div class="col-lg-2 col-lg-offset-1 col-md-4 col-sm-6 col-xs-12 topAthlete">
-                                <div id="athleteImage1"></div>
-                                <h3 id="athleteTitle one">I'm title Three</h3>
-                                <div id="bio1">
-                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <div class="row mini five">
+                                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                                        <div id="myCarousel" class="carousel slide">
+                                            <div class="carousel-inner 1" >
+                                                <div class="item active">
+                                                    <div class="row mini four">
+                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 articleBig">
+                                                            <div id="image1"></div>
+                                                            <div class="rgba">
+                                                                <h3 id="miniTitle1">I'm title one</h3>
+                                                                <div id="article1">
+                                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 article">
+                                                            <div id="image2"></div>
+                                                            <div class="rgba">
+                                                                <h3 id="miniTitle2">I'm title Two</h3>
+                                                                <div id="article2">
+                                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 article">
+                                                            <div id="image3"></div>
+                                                            <div class="rgba">
+                                                                <h3 id="miniTitle3">I'm title Three</h3>
+                                                                <div id="article3">
+                                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 article">
+                                                            <div id="image4"></div>
+                                                            <div class="rgba">
+                                                                <h3 id="miniTitle4">I'm title four</h3>
+                                                                <div id="article4">
+                                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item ">
+                                                    <div class="row mini five">
+                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" id="article5">
+                                                            <div id="image1"></div>
+                                                            <div class="rgba">
+                                                                <h3 id="miniTitle5">I'm title one</h3>
+                                                                <div id="article5">
+                                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" id="article6">
+                                                            <div id="image6"></div>
+                                                            <div class="rgba">
+                                                                <h3 id="miniTitle6">I'm title Two</h3>
+                                                                <div id="article6">
+                                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" id="article7">
+                                                            <div id="image7"></div>
+                                                            <div class="rgba">
+                                                                <h3 id="miniTitle7">I'm title Three</h3>
+                                                                <div id="article7">
+                                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" id="article8">
+                                                            <div id="image8"></div>
+                                                            <div class="rgba">
+                                                                <h3 id="miniTitle8">I'm title four</h3>
+                                                                <div id="article8">
+                                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                                                <span class="icon-prev left1"></span>
+                                            </a>
+                                            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                                                <span class="icon-next right1"></span>
+                                            </a>
+                                            </div> <!-- end of carousel-->
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 topAthlete">
-                                <div id="athleteImage2"></div>
-                                <h3 id="athleteTitle2">I'm title Three</h3>
-                                <div id="bio2">
-                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <!-- row two ending-->
+                                <div class="row three">
+                                    <div class="row mini six">
+                                        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
+                                            <h2 class="text-center">Participating countries</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row mini seven">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center alphabet">
+                                            <a href="">a</a>
+                                            <a href="">b</a>
+                                            <a href="">c</a>
+                                            <a href="">d</a>
+                                            <a href="">e</a>
+                                            <a href="">f</a>
+                                            <a href="">g</a>
+                                            <a href="">h</a>
+                                            <a href="">i</a>
+                                            <a href="">j</a>
+                                            <a href="">k</a>
+                                            <a href="">l</a>
+                                            <a href="">m</a>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+                                            <div class="input-group searchBox2">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default" type="button">Go!</button>
+                                                </span>
+                                                <input type="text" class="form-control search2" placeholder="Search for...">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center alphabet">
+                                            <a href="">n</a>
+                                            <a href="">o</a>
+                                            <a href="">p</a>
+                                            <a href="">q</a>
+                                            <a href="">r</a>
+                                            <a href="">s</a>
+                                            <a href="">t</a>
+                                            <a href="">u</a>
+                                            <a href="">v</a>
+                                            <a href="">w</a>
+                                            <a href="">x</a>
+                                            <a href="">y</a>
+                                            <a href="">z</a>
+                                        </div>
+                                    </div>
+                                    <div class="row mini eight">
+                                        <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="map" name='map'></div> -->
+                                        <div id="vmap" class="jqvmap" style="width: 100%; height: 400px;"></div>
+                                    </div>
+                                    </div><!-- row three ending-->
+                                    <div class="row fourFour">
+                                        <a name='athletes'></a>
+                                        <div class="row mini nine">
+                                            <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+                                                <h2 class="text-center">Top Athletes from Chosen Country</h2>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="row mini ten">
+                                            <div class="col-lg-2 col-lg-offset-1 col-md-4 col-sm-6 col-xs-12 topAthlete">
+                                                <div id="athleteImage1"></div>
+                                                <h3 id="athleteTitle one">I'm title Three</h3>
+                                                <div id="bio1">
+                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 topAthlete">
+                                                <div id="athleteImage2"></div>
+                                                <h3 id="athleteTitle2">I'm title Three</h3>
+                                                <div id="bio2">
+                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 topAthlete">
+                                                <div id="athleteImage3"></div>
+                                                <h3 id="athleteTitle3">I'm title Three</h3>
+                                                <div id="bio3">
+                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 topAthlete">
+                                                <div id="athleteImage4"></div>
+                                                <h3 id="athleteTitle4">I'm title Three</h3>
+                                                <div id="bio4">
+                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 visible-lg topAthlete">
+                                                <div id="athleteImage5"></div>
+                                                <h3 id="athleteTitle5">I'm title Three</h3>
+                                                <div id="bio5">
+                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="row mini eleven">
+                                            <div class="col-lg-2 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-6 col-xs-12 topAthlete">
+                                                <div id="athleteImage6"></div>
+                                                <h3 id="athleteTitle6">I'm title Three</h3>
+                                                <div id="bio6">
+                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 topAthlete">
+                                                <div id="athleteImage7"></div>
+                                                <h3 id="athleteTitle7">I'm title Three</h3>
+                                                <div id="bio7">
+                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 topAthlete">
+                                                <div id="athleteImage8"></div>
+                                                <h3 id="athleteTitle8">I'm title Three</h3>
+                                                <div id="bio8">
+                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 topAthlete">
+                                                <div id="athleteImage9"></div>
+                                                <h3 id="athleteTitle9">I'm title Three</h3>
+                                                <div id="bio9">
+                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 visible-lg topAthlete">
+                                                <div id="athleteImage10"></div>
+                                                <h3 id="athleteTitle10">I'm title Three</h3>
+                                                <div id="bio10">
+                                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- row four ending-->
                                 </div>
+                                <!-- end of container fluid -->
                             </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 topAthlete">
-                                <div id="athleteImage3"></div>
-                                <h3 id="athleteTitle3">I'm title Three</h3>
-                                <div id="bio3">
-                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 topAthlete">
-                                <div id="athleteImage4"></div>
-                                <h3 id="athleteTitle4">I'm title Three</h3>
-                                <div id="bio4">
-                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 visible-lg topAthlete">
-                                <div id="athleteImage5"></div>
-                                <h3 id="athleteTitle5">I'm title Three</h3>
-                                <div id="bio5">
-                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <br/>
-                        <div class="row mini eleven">
-
-                            <div class="col-lg-2 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-6 col-xs-12 topAthlete">
-                                <div id="athleteImage6"></div>
-                                <h3 id="athleteTitle6">I'm title Three</h3>
-                                <div id="bio6">
-                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 topAthlete">
-                                <div id="athleteImage7"></div>
-                                <h3 id="athleteTitle7">I'm title Three</h3>
-                                <div id="bio7">
-                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 topAthlete">
-                                <div id="athleteImage8"></div>
-                                <h3 id="athleteTitle8">I'm title Three</h3>
-                                <div id="bio8">
-                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 topAthlete">
-                                <div id="athleteImage9"></div>
-                                <h3 id="athleteTitle9">I'm title Three</h3>
-                                <div id="bio9">
-                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 visible-lg topAthlete">
-                                <div id="athleteImage10"></div>
-                                <h3 id="athleteTitle10">I'm title Three</h3>
-                                <div id="bio10">
-                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- row four ending-->
-                </div>
-            <!-- end of container fluid -->
-        </div>
-        <!-- main wrapper ending -->
-
-        <!-- addig Jquery before bootstrap js -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-				<!-- <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
-        <!-- <script type="text/javascript" src="http://demo.tutorialzine.com/2011/12/countdown-jquery/assets/countdown/jquery.countdown.js"></script> -->
-
-        <!-- Angular -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js"></script>
-        <script type="text/javascript" src="tests/main_module/rio.main.js"></script>
-        <script type="text/javascript" src="libs/countdown/assets/countdown/jquery.countdown.js"></script>
-        <script type="text/javascript" src="assets/js/counter.js"></script>
-    </body>
-</html>
+                            <!-- main wrapper ending -->
+                            <!-- addig Jquery before bootstrap js -->
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+                            <!-- Latest compiled and minified JavaScript -->
+                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+                            <!-- <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
+                            <!-- <script type="text/javascript" src="http://demo.tutorialzine.com/2011/12/countdown-jquery/assets/countdown/jquery.countdown.js"></script> -->
+                            <!-- Angular -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js"></script>
+                            <script type="text/javascript" src="tests/main_module/rio.main.js"></script>
+                            <script type="text/javascript" src="libs/countdown/assets/countdown/jquery.countdown.js"></script>
+                            <script type="text/javascript" src="assets/js/counter.js"></script>
+                            <script type="text/javascript" src="libs/map/jquery.vmap.js"></script>
+                            <script type="text/javascript" src="libs/map/jquery.vmap.world.js" charset="utf-8"></script>
+                            <script type="text/javascript">
+                                jQuery(document).ready(function() {
+                                    jQuery('#vmap').vectorMap(
+                                    {
+                                        map: 'world_en',
+                                        backgroundColor: '#a5bfdd ',
+                                        borderColor: '#818181 ',
+                                        borderOpacity: 0.25,
+                                        borderWidth: 1,
+                                        color: '#f4f3f0 ',
+                                        enableZoom: true,
+                                        hoverColor: '#c9dfaf ',
+                                        hoverOpacity: null,
+                                        normalizeFunction: 'linear',
+                                        scaleColors: ['#b6d6ff ', '#005ace '],
+                                        selectedColor: '#c9dfaf ',
+                                        selectedRegions: null,
+                                        showTooltip: true,
+                                        onRegionClick: function(element, code, region)
+                                {
+                                    console.log(code);
+                                    // var message = 'You clicked "'
+                                    // + region
+                                    // + '" which has the code: '
+                                    // + code.toUpperCase();
+                                    // alert(message);
+                                    }
+                                });
+                                });
+                            </script>
+                        </body>
+                    </html>
