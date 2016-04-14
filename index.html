@@ -313,7 +313,7 @@
                             img.src = countryFlag[code.toUpperCase()].link;
                             src.appendChild(img);
                             // console.log(countries); console.log(element); console.log(code);
-                            document.getElementById("medalArea").innerHTML = countries[region].combinedTotal;
+                            document.getElementById("medalArea").innerHTML = countries[code.toUpperCase()].combinedTotal;
                             var src = document.getElementById("medalArea");
                             var img = document.createElement("img");
                             img.src = "assets/img/medal.png";
