@@ -78,12 +78,12 @@ rioApp.factory('DataService', function($http) {
 });
 
 
-rioApp.controller('MainModule', function($scope, DataService) {
+rioApp.controller('MainModule', function($scope) {
+  // DataService.getCountries(function(poneys) {
+  //   $scope.poneys = poneys;
+  //   console.log(poneys);
+  // });
 
-  DataService.getCountries(function(poneys) {
-    $scope.poneys = poneys;
-    console.log(poneys);
-  });
 
 });
 

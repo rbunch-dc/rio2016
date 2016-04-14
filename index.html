@@ -9,6 +9,15 @@
         <link rel="stylesheet" type="text/css" href="assets/css/layout.css">
         <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="libs/map/jqvmap.css">
+
+<style type="text/css" media="screen">
+
+#medalArea img{
+    height: 40px;
+}
+    
+</style>
+
     </head>
     <body ng-controller="MainModule">
         <div class="main-wrapper">
@@ -202,7 +211,7 @@
                                             <a href="">m</a>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
-                                            <div class="input-group searchBox2">
+                                            <div  class="input-group searchBox2">
                                                 <span class="input-group-btn">
                                                     <button class="btn btn-default" type="button">Go!</button>
                                                 </span>
@@ -225,9 +234,12 @@
                                             <a href="">z</a>
                                         </div>
                                     </div>
-                                    <div class="row mini eight">
+                                     <div id="countryArea" class="row text-center" style="height:100px"> </div>
+                                     <div id="medalArea" class="row text-center" style="height:50px"> </div>
+                                    <div  class="row mini eight">
                                         <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="map" name='map'></div> -->
-                                        <div id="vmap" class="jqvmap" style="width: 100%; height: 400px;"></div>
+
+                                    <div id="vmap" class="jqvmap" style="width: 100%; height: 400px;"></div>
                                     </div>
                                     </div><!-- row three ending-->
                                     <div class="row fourFour">
@@ -319,49 +331,66 @@
                                 <!-- end of container fluid -->
                             </div>
                             <!-- main wrapper ending -->
-                            <!-- addig Jquery before bootstrap js -->
-                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-                            <!-- Latest compiled and minified JavaScript -->
-                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-                            <!-- <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
-                            <!-- <script type="text/javascript" src="http://demo.tutorialzine.com/2011/12/countdown-jquery/assets/countdown/jquery.countdown.js"></script> -->
-                            <!-- Angular -->
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js"></script>
-                            <script type="text/javascript" src="tests/main_module/rio.main.js"></script>
-                            <script type="text/javascript" src="libs/countdown/assets/countdown/jquery.countdown.js"></script>
-                            <script type="text/javascript" src="assets/js/counter.js"></script>
-                            <script type="text/javascript" src="libs/map/jquery.vmap.js"></script>
-                            <script type="text/javascript" src="libs/map/jquery.vmap.world.js" charset="utf-8"></script>
-                            <script type="text/javascript">
-                                jQuery(document).ready(function() {
-                                    jQuery('#vmap').vectorMap(
-                                    {
-                                        map: 'world_en',
-                                        backgroundColor: '#a5bfdd ',
-                                        borderColor: '#818181 ',
-                                        borderOpacity: 0.25,
-                                        borderWidth: 1,
-                                        color: '#f4f3f0 ',
-                                        enableZoom: true,
-                                        hoverColor: '#c9dfaf ',
-                                        hoverOpacity: null,
-                                        normalizeFunction: 'linear',
-                                        scaleColors: ['#b6d6ff ', '#005ace '],
-                                        selectedColor: '#c9dfaf ',
-                                        selectedRegions: null,
-                                        showTooltip: true,
-                                        onRegionClick: function(element, code, region)
-                                {
-                                    console.log(code);
-                                    // var message = 'You clicked "'
-                                    // + region
-                                    // + '" which has the code: '
-                                    // + code.toUpperCase();
-                                    // alert(message);
-                                    }
-                                });
-                                });
-                            </script>
+    <!-- addig Jquery before bootstrap js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="http://demo.tutorialzine.com/2011/12/countdown-jquery/assets/countdown/jquery.countdown.js"></script> -->
+    <!-- Angular -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js"></script>
+    <script type="text/javascript" src="tests/main_module/rio.main.js"></script>
+    <script type="text/javascript" src="libs/countdown/assets/countdown/jquery.countdown.js"></script>
+    <script type="text/javascript" src="controllers/countryData/countryFlag.js"></script>
+    <script type="text/javascript" src="controllers/countryData/countryMedal.js"></script>
+    <script type="text/javascript" src="assets/js/counter.js"></script>
+    <script type="text/javascript" src="libs/map/jquery.vmap.js"></script>
+    <script type="text/javascript" src="libs/map/jquery.vmap.world.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery('#vmap').vectorMap(
+            {
+                map: 'world_en',
+                backgroundColor: '#a5bfdd ',
+                borderColor: '#818181 ',
+                borderOpacity: 0.25,
+                borderWidth: 1,
+                color: '#f4f3f0 ',
+                enableZoom: true,
+                hoverColor: '#c9dfaf ',
+                hoverOpacity: null,
+                normalizeFunction: 'linear',
+                scaleColors: ['#b6d6ff ', '#005ace '],
+                selectedColor: '#c9dfaf ',
+                selectedRegions: null,
+                showTooltip: true,
+                onRegionClick: function(element, code, region)
+            {
+            // var message = 'You clicked "'
+            // + region
+            // + ' which has the code: '
+            // + code.toUpperCase();
+            // console.log(countryFlag[code.toUpperCase()].link);
+            document.getElementById("countryArea").innerHTML = countryFlag[code.toUpperCase()].name;
+            var src = document.getElementById("countryArea");
+            var img = document.createElement("img");
+            img.src = countryFlag[code.toUpperCase()].link;
+            src.appendChild(img);
+            // console.log(countries);
+            // console.log(element);
+            // console.log(code);
+            document.getElementById("medalArea").innerHTML = countries[region].combinedTotal;
+            var src = document.getElementById("medalArea");
+            var img = document.createElement("img");
+            img.src = "assets/img/medal.png";
+            src.appendChild(img);
+            console.log(region);
+            
+
+            }
+        });
+});
+    </script>
                         </body>
                     </html>
