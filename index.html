@@ -78,8 +78,8 @@
 
                     </div>
 
-                </div>
-                <!-- row one ending-->
+                </div><!-- row one ending-->
+                
                 <a name="articles"></a>
                 <div class="row two" id="row-two">
 
@@ -190,8 +190,16 @@
                         <!-- end of carousel-->
                     </div>
 
+                </div><!-- row two ending-->
+                <a name="map"></a>
+
+                <div class="sub row mini six" id="sub6">
+                        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+                            <h1 class="text-center">World Map</h1>
+                            <a name="map"></a>
+                        </div>
                 </div>
-                <!-- row two ending-->
+
                 <div id="countryArea" class="row text-center" style="height:100px"></div>
                 <div id="medalArea" class="row text-center" style="height:50px"></div>
                 <div class="row mini eight">
@@ -210,9 +218,8 @@
 
                     <div class="sub row mini seven" id="sub7">
                         <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-12 col-xs-12">
-                            <!-- <input type="text" class="col-lg-8 col-md-8 col-sm-8 col-xs-8"/>
-    					<input type="button" id="cbtn" value="search" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-    					SWILL, WE CAN PUT THE CAROUSEL OF COUNTRY FLAGS IN HERE-->
+                           
+    					<!-- WILL, WE CAN PUT THE CAROUSEL OF COUNTRY FLAGS IN HERE-->
                         </div>
                     </div>
 
@@ -220,8 +227,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     </div>
 
-                </div>
-                <!-- row three ending-->
+                </div><!-- row three ending-->
                 <a name="athletes"></a>
                 <div class="row four" id="row-four">
 
@@ -235,32 +241,34 @@
                     <div class="sub row mini ten" id="sub10"></div>
 
                     <div class="sub row mini eleven" id="sub11">
-                        <div class="col-lg-1 col-md-0 col-sm-0 col-xs-0">
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6" ng-repeat="cont in athletes">
-                          <div id="img">
-                              <img ng-src="{{cont.image}}"/>
-                          </div>
-                          <div id=name>
-                              {{ cont.athlete}}
-                          </div>
-                          <div id=sport>
-                              {{cont.sport}}
-                          </div>
-                          <div id="read">
-                              <a href="{{cont.href}}">Read more..</a>
-                          </div>
-                        </div>
+                        
+                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 athDiv" ng-repeat="cont in athletes">
 
-                        <div class="sub row mini twelve" id="sub12"></div>
+                            <div id="athImg5" class="text-center">
+                                <img class="self" ng-src="{{cont.image}}"/>
+                            </div>
+                            <div class="text-center col-xs-12" id="athName5">
+                                <h3>{{ cont.athlete}}</h3></div>
+                            <div class="text-center" id="bio5">
+                                <h6>{{cont.sport}}</h6>
+                            </div>
+                            <div class="text-center">
+                                <a href="{{cont.href}}">Read more..</a>
+                            </div>
+
+                        </div>
 
                     </div>
-                    <!-- row four ending-->
 
-                </div>
+                    
 
-            </div>
-            <!-- main wrapper ending -->
+                    
+                    
+
+                </div> <!-- row four ending-->
+
+            </div> <!-- container-fluid ending -->
+        </div> <!-- main wrapper ending -->
             <!-- addig Jquery before bootstrap js -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
             <!-- Latest compiled and minified JavaScript -->

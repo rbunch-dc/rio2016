@@ -69,11 +69,25 @@ li> a{
 	  border:1px solid black;
 	  border-radius:50%;}
 
+.athDiv {margin-bottom: 10vh;}
+
+}
+
+@media screen and (min-width: 600px){
+	#row-one {background-image: url(../img/jumbomedi.jpg);
+		  background-size: cover;
+		  background-position: center;
+		  height:100vh;}
+
+#main-title { margin-top: 7vh;
+	font-size:6em;
+	color:wheat;}
+
 }
 
 
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 1000px){
 * {margin:0;
    padding:0;}
 
@@ -118,6 +132,8 @@ body {font-size: 15;}
 		  color:wheat;
 		}
 
+#countryArea {margin-top:0px;}
+
 #cbtn {height:24px;}
 
 #sub7 {margin-top: 2vh;}
@@ -144,6 +160,8 @@ body {font-size: 15;}
 	  height:25vh;
 	  border:1px solid black;
 	  border-radius:50%;}
+
+.athDiv {margin-bottom: 10vh;}
 
 } /* large screen ending*/
 
