@@ -204,5 +204,7 @@ background: transparent;
     position: absolute;
     margin-right: -220px;
 }
-
+#countryArea img{
+  border: 1px solid black;
+}
 
