@@ -31,12 +31,18 @@ li> a{
 #sub4 h1 {font-size:3em;
 		  color:wheat;}
 
-#sub5 {margin-top:3vh;}
+#sub5 {margin-top:3vh;
+	   padding: 25px;}
 
-.artIm {background-image: url(../img/flower.jpg);
+.article { box-sizing: border-box;
+		   padding:0, 10,0,10; }
+
+.artIm {border:2px solid black;}
+
+/*.artIm {background-image: url(../img/flower.jpg);
 		height:50vh;
 		background-size: cover;
-		background-position: center;}
+		background-position: center;}*/
 
 /* row three*/
 
@@ -47,11 +53,56 @@ li> a{
 
 #sub7 {margin-top: 2vh;}
 
-/*#sub8 {background-image:url(../img/worldMap.jpg);
-	  background-size: cover;
-	  background-position: center;
-	  height:80vh;
-	  margin-top:5vh;}*/
+.rgba {color:black;}
+
+#image1 {background-image: url(../img/articleImg1.jpg);
+		 height:50vh;
+		 background-size: cover;
+		 background-position: center;}
+#miniTitle1{}
+#artice1{}
+#image2 {background-image: url(../img/articleImg2.jpg);
+		 height:50vh;
+		 background-size: cover;
+		 background-position: center;}
+#miniTitle2{}
+#artice2{}
+#image3 {background-image: url(../img/articleImg3.jpg);
+		 height:50vh;
+		 background-size: cover;
+		 background-position: center;}
+#miniTitle3{}
+#artice3{}
+#image4 {background-image: url(../img/articleImg4.jpg);
+		 height:50vh;
+		 background-size: cover;
+		 background-position: center;}
+#miniTitle4{}
+#artice4{}
+#image5 {background-image: url(../img/articleImg5.jpg);
+		 height:50vh;
+		 background-size: cover;
+		 background-position: center;}
+#miniTitle5{}
+#artice5{}
+#image6 {background-image: url(../img/articleImg6.jpg);
+		 height:50vh;
+		 background-size: cover;
+		 background-position: center;}
+#miniTitle6{}
+#artice6{}
+#image7 {background-image: url(../img/articleImg7.jpg);
+		 height:50vh;
+		 background-size: cover;
+		 background-position: center;}
+#miniTitle7{}
+#artice7{}
+#image8 {background-image: url(../img/articleImg8.jpg);
+		 height:50vh;
+		 background-size: cover;
+		 background-position: center;}
+#miniTitle8{}
+#artice8{}
 
 
 
@@ -71,6 +122,22 @@ li> a{
 
 .athDiv {margin-bottom: 10vh;}
 
+#athName5 { max-height:7vh; }
+
+#bio5 {margin-top:12vh;}
+
+}
+
+#countdown {
+  text-align:center;
+  padding-top: 24%;
+}
+@media (max-width: 480px) {
+#countdown {
+  max-width: 320px;
+  text-align:center;
+  padding-top: 24%;
+  }
 }
 
 @media screen and (min-width: 600px){
@@ -138,11 +205,6 @@ body {font-size: 15;}
 
 #sub7 {margin-top: 2vh;}
 
-/*#sub8 {background-image:url(../img/worldMap.jpg);
-	  background-size: cover;
-	  background-position: center;
-	  height:80vh;
-	  margin-top:5vh;}*/
 
 
 
