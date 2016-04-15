@@ -73,26 +73,28 @@
 	};
 
 
-	function init(elem, options) {
-		elem.addClass('countdownHolder');
+  function init(elem, options) {
+    elem.addClass('countdownHolder');
+    $('.countdownHolder').html('<span class="position">\
+          <span class="digit static">1</span>\
+        </span>');
+    // Creating the markup inside the container
+    $.each(['Days', 'Hours', 'Minutes', 'Seconds'], function(i) {
+      $('<span class="count' + this + '">').html(
+        '<span class="position">\
+          <span class="digit static">0</span>\
+        </span>\
+        <span class="position">\
+          <span class="digit static">0</span>\
+        </span>'
+      ).appendTo(elem);
 
-		// Creating the markup inside the container
-		$.each(['Days', 'Hours', 'Minutes', 'Seconds'], function(i) {
-			$('<span class="count' + this + '">').html(
-				'<span class="position">\
-					<span class="digit static">0</span>\
-				</span>\
-				<span class="position">\
-					<span class="digit static">0</span>\
-				</span>'
-			).appendTo(elem);
+      if (this != "Seconds") {
+        elem.append('<span class="countDiv countDiv' + i + '"></span>');
+      }
+    });
 
-			if (this != "Seconds") {
-				elem.append('<span class="countDiv countDiv' + i + '"></span>');
-			}
-		});
-
-	}
+  }
 
 	// Creates an animated transition between the two numbers
 	function switchDigit(position, number) {

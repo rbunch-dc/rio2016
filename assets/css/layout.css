@@ -163,8 +163,15 @@ body{
 
 #countdown {
   text-align:center;
+  padding-top: 24%;
 }
-
+@media (max-width: 480px) {
+#countdown {
+  max-width: 320px;
+  text-align:center;
+  padding-top: 24%;
+  }
+}
 .affix-sidebar {
   max-width:259px;
   background: transparent;
